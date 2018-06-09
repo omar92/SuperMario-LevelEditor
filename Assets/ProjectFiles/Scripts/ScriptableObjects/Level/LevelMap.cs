@@ -24,6 +24,26 @@ public class LevelMap : ScriptableObject
     {
         get
         {
+            if (map == null)
+            {
+                if (!initialised)
+                {
+                    if (PlayerPrefs.HasKey("Level" + name))
+                    {
+                        Load();
+                    }
+                    else
+                    {
+                        InitMap();
+                    }
+                    initialised = true;
+                }
+                else
+                {
+                    Load();
+                    initialised = true;
+                }
+            }
             return size;
         }
     }
@@ -74,13 +94,22 @@ public class LevelMap : ScriptableObject
     {
         if (map == null)
         {
-            if (!initialised)
+            if (!initialised )
             {
-                InitMap();
+                if (PlayerPrefs.HasKey("Level" + name))
+                {
+                    Load();
+                }
+                else
+                {
+                    InitMap();
+                }
+                initialised = true;
             }
             else
             {
                 Load();
+                initialised = true;
             }
         }
         return map[x, y];
@@ -148,11 +177,20 @@ public class LevelMap : ScriptableObject
         {
             if (!initialised)
             {
-                InitMap();
+                if (PlayerPrefs.HasKey("Level" + name))
+                {
+                    Load();
+                }
+                else
+                {
+                    InitMap();
+                }
+                initialised = true;
             }
             else
             {
                 Load();
+                initialised = true;
             }
         }
 

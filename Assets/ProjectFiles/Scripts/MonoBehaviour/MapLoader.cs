@@ -31,8 +31,10 @@ public class MapLoader : MonoBehaviour
     Vector3 pos;
     private void BuildMap()
     {
+
         int width = (int)level.Size.x;
         int height = (int)level.Size.y;
+        Debug.Log("BuildMap " + width + " " + height);
         for (int i = 0; i < width; i++)
         {
             for (int j = 0; j < height; j++)
