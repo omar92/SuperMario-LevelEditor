@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23299032292157188}
   - component: {fileID: 136887984697210666}
   - component: {fileID: 114002868878284102}
+  - component: {fileID: 114669324533411700}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -98,6 +99,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEditMode: {fileID: 11400000, guid: 8396b1ed27ab00e40b856d505dcbe44c, type: 2}
   map: {fileID: 11400000, guid: 68b304634fa64c743953cdd9d8502811, type: 2}
+--- !u!114 &114669324533411700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1537002044628280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55c6fb0bdd27ef54ba8a7934b1e4308f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoinCollected: {fileID: 0}
 --- !u!136 &136887984697210666
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -105,7 +118,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1537002044628280}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2

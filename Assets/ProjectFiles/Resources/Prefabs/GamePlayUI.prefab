@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 224631291200660950}
   - component: {fileID: 222019834931711480}
   - component: {fileID: 114539728915024446}
+  - component: {fileID: 114215424439874358}
+  - component: {fileID: 114721811467955474}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -198,6 +200,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036b892ee0093f046ba145fcd41d3cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114215424439874358
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1039441579818922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98fee744fd3877e48832343438f2f30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 114029112518225458}
 --- !u!114 &114256046776871882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -367,6 +381,35 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114721811467955474
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1039441579818922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c213b2f211c5ab9418cf3d1bcc2b1928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: c485ec560dfb3ea49954417d1e30922b, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114215424439874358}
+        m_MethodName: PopulateWith
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 0a7fed2b5cf92644a9cd80c8e18f0ed4,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: FloatVariable, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114729447777353332
 MonoBehaviour:
   m_ObjectHideFlags: 1

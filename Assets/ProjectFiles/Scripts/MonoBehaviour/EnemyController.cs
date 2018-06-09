@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     public float xVelocityMax = 5;
     public float xForce = 20;
     public float rayCheckDistance;
+    public GameEvent OnEnemyKilled;
 
     Vector2 direction;
     private Rigidbody rb;
@@ -50,6 +51,7 @@ public class EnemyController : MonoBehaviour
        // if(isHit) Debug.Log(info.collider.tag);
         if (isHit && info.collider.tag== "Player")
         {
+            OnEnemyKilled.Raise();
             Destroy(gameObject);
         }
     }

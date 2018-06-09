@@ -117,6 +117,7 @@ MonoBehaviour:
   xVelocityMax: 5
   xForce: 20
   rayCheckDistance: 0.6
+  OnEnemyKilled: {fileID: 11400000, guid: cc983ba48e39a244d96aab257ba665fc, type: 2}
 --- !u!114 &114365888008287104
 MonoBehaviour:
   m_ObjectHideFlags: 1
