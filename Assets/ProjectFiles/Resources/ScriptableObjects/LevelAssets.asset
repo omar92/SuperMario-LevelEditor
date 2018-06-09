@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e9feab86e7a3f4aa8841e6729cbaa1, type: 3}
+  m_Name: LevelAssets
+  m_EditorClassIdentifier: 
+  MapAssets:
+  - name: Grass
+    Prefab: {fileID: 114632220471446976, guid: cdac73574f8661047a5e5ed388da0cba, type: 2}
+    isStatic: 1
+  - name: Mud
+    Prefab: {fileID: 114647578596372404, guid: 364f2050a32c71c409d7ab512b43af76, type: 2}
+    isStatic: 1
+  - name: Player
+    Prefab: {fileID: 114973495417166130, guid: aa3d3e8eac8fed34b8baecc0ad2cc52c, type: 2}
+    isStatic: 0
+  - name: box
+    Prefab: {fileID: 114170563181871536, guid: 0b0c9880aa69bef4c8ce1546dcdb312a, type: 2}
+    isStatic: 1
+  - name: Enemy1
+    Prefab: {fileID: 114365888008287104, guid: 7d82d41eb94051b449a1f01d13634128, type: 2}
+    isStatic: 0
+  - name: Wall
+    Prefab: {fileID: 114859403391888012, guid: 97f73bb77a095c64aa0162796905aaec, type: 2}
+    isStatic: 1
+  - name: Tannel
+    Prefab: {fileID: 114265211742251060, guid: 3a47cf17f37299e409c0df46ffba03c4, type: 2}
+    isStatic: 1
+  - name: Coin
+    Prefab: {fileID: 114002868878284102, guid: c8387bcf74af6324f9970d2cd74f04fd, type: 2}
+    isStatic: 0
