@@ -24,6 +24,7 @@ public class PlayerHandler : MonoBehaviour
 
     public GameEvent PLayerDeath;
     bool isDead = false;
+    bool isBig = false;
     private void Awake()
     {
         rb = this.GetComponent<Rigidbody>();
@@ -74,7 +75,7 @@ public class PlayerHandler : MonoBehaviour
             }
             if (Mathf.Abs(this.rb.velocity.x) > xVelocityMax)
             {
-                Debug.Log("limit");
+                //Debug.Log("limit");
                 this.rb.velocity = new Vector2(Mathf.Sign(this.rb.velocity.x) * xVelocityMax, this.rb.velocity.y);
             }
         }
@@ -143,7 +144,8 @@ public class PlayerHandler : MonoBehaviour
         isDead = true;
         rb.velocity = Vector3.zero;
         GetComponent<Collider>().enabled = false;
-        rb.AddForce(Vector3.up * 20, ForceMode.Impulse);
+        rb.AddForce(Vector3.up * 10, ForceMode.Impulse);
+        transform.position = transform.position + Vector3.back;
         yield return new WaitForSeconds(2);
         rb.AddForce(Vector3.down * 10, ForceMode.Impulse);
         PLayerDeath.Raise();
@@ -156,7 +158,22 @@ public class PlayerHandler : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Die();
+
+            if (!isBig)
+                Die();
+            else
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+                rayCheckDistance = .6f;
+                isBig = false;
+            }
+        }
+        if (collision.gameObject.tag == "Mashrom")
+        {
+            transform.localScale = new Vector3(1, 1.5f, 1);
+            rayCheckDistance = 0.8f;
+            isBig = true;
+            Destroy(collision.gameObject);
         }
     }
 }

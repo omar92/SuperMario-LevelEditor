@@ -1505,8 +1505,16 @@ MonoBehaviour:
   map: {fileID: 11400000, guid: 68b304634fa64c743953cdd9d8502811, type: 2}
   Mashrom: {fileID: 1709495696587610}
   Coins: {fileID: 1212987431419746}
+  invintorySize: 5
   Star: {fileID: 1908092815295304}
   UI: {fileID: 1988355819337606}
+  CoinSpawn: {fileID: 1537002044628280, guid: a1dd753c7b155224e9986d4e652e82a0, type: 2}
+  mashromSpawn: {fileID: 114349269992549344, guid: 197b71b5e9934db41a2af3163cbab394,
+    type: 2}
+  starSpawn: {fileID: 114990262427386068, guid: a8d1abefbe7a99d41977560a324eeed1,
+    type: 2}
+  coinCollected: {fileID: 11400000, guid: 86845b725a5f3454a8bc636409b412a8, type: 2}
+  IsEditMode: {fileID: 11400000, guid: 8396b1ed27ab00e40b856d505dcbe44c, type: 2}
 --- !u!114 &114916585668200228
 MonoBehaviour:
   m_ObjectHideFlags: 1
