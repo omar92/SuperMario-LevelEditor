@@ -17,7 +17,9 @@ public class PlayerHandler : MonoBehaviour
 
     private bool IsGrounded;
     private float originalmass;
-
+    private bool isFacingColider1;
+    private bool isFacingColider2;
+    Ray ray;
     public TransformVariable camera;
 
     private void Awake()
@@ -27,18 +29,38 @@ public class PlayerHandler : MonoBehaviour
     }
     private void FixedUpdate()
     {
-       // var force = (Mathf.Abs(this.rb.velocity.y) > .1) ? xVelocityMax : xForce;//if on air mov horizontal using difffrent force
+        // var force = (Mathf.Abs(this.rb.velocity.y) > .1) ? xVelocityMax : xForce;//if on air mov horizontal using difffrent force
 
         float x = Input.GetAxis("Horizontal");
         if (x > 0)
         {
-            this.rb.AddForce(Vector2.right * xForce);
+
+            ray = new Ray((transform.position + new Vector3(0, .4f)), Vector3.right);
+            isFacingColider1 = Physics.Raycast(ray, rayCheckDistance);
+            ray = new Ray((transform.position + new Vector3(0, -.4f)), Vector3.right);
+            isFacingColider2 = Physics.Raycast(ray, rayCheckDistance);
+
+            if (isFacingColider1 || isFacingColider2)
+            {
+                this.rb.velocity = new Vector2(0, this.rb.velocity.y);
+            }
+            else
+            {
+                this.rb.AddForce(Vector2.right * xForce);
+            }
         }
         if (x < 0)
         {
             var checkPoint = transform.position + (Vector3.left * .8f);
             var screenPoint = camera.value.GetComponent<Camera>().WorldToViewportPoint(checkPoint);
-            if (screenPoint.x < 0)
+
+            ray = new Ray((transform.position + new Vector3(0, .4f)), Vector3.left);
+            isFacingColider1 = Physics.Raycast(ray, rayCheckDistance);
+            ray = new Ray((transform.position + new Vector3(0, -.4f)), Vector3.left);
+            isFacingColider2 = Physics.Raycast(ray, rayCheckDistance);
+
+
+            if (screenPoint.x < 0 || isFacingColider1 || isFacingColider2)
             {
                 this.rb.velocity = new Vector2(0, this.rb.velocity.y);
             }
@@ -83,11 +105,12 @@ public class PlayerHandler : MonoBehaviour
 
         if (rb.velocity.y < -0.1)
         {
-            rb.mass = originalmass * gravityDown;
+            // rb.mass = originalmass * gravityDown;
+            rb.AddForce(Vector3.down * gravityDown, ForceMode.Acceleration);
         }
         else
         {
-            rb.mass = originalmass * gravityUp;
+            // rb.mass = originalmass * gravityUp;
         }
 
         if (Mathf.Abs(rb.velocity.y) < .2)

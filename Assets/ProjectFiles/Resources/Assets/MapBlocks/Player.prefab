@@ -349,7 +349,7 @@ MonoBehaviour:
   xForce: 30
   rayCheckDistance: 0.6
   gravityUp: 2
-  gravityDown: 20
+  gravityDown: 40
   onGroundDrag: 5
   camera: {fileID: 11400000, guid: a390bc65b8c13214b8db9f43df2eb6fd, type: 2}
 --- !u!114 &114973495417166130
@@ -371,7 +371,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1080749615993142}
-  m_Material: {fileID: 13400000, guid: 01571ba68fb2dad46aa03094ab219579, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.4
