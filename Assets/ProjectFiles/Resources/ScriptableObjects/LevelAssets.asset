@@ -18,8 +18,8 @@ MonoBehaviour:
   - name: Mud
     Prefab: {fileID: 114647578596372404, guid: 364f2050a32c71c409d7ab512b43af76, type: 2}
     isStatic: 1
-  - name: Player
-    Prefab: {fileID: 114973495417166130, guid: aa3d3e8eac8fed34b8baecc0ad2cc52c, type: 2}
+  - name: Spawn
+    Prefab: {fileID: 114152284088498884, guid: 08ad63213c1d4f548a6decbcc22e4736, type: 2}
     isStatic: 0
   - name: box
     Prefab: {fileID: 114170563181871536, guid: 0b0c9880aa69bef4c8ce1546dcdb312a, type: 2}

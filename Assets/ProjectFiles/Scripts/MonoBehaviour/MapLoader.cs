@@ -1,29 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MapLoader : MonoBehaviour
 {
 
     public LevelMap level;
     public GameObject bg;
+    public BoolVariable isEditMode;
+    public UnityEvent onMapLoaded;
+
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (isEditMode.value)
         {
-            level.Save();
-        }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            for (int i = 0; i < transform.childCount; i++)
+            if (Input.GetKeyDown(KeyCode.S))
             {
-                Destroy(transform.GetChild(i).gameObject);
+                level.Save();
             }
-            level.Load();
-            BuildMap();
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                RebuildLevel();
+            }
         }
     }
+
+    public void RebuildLevel()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Destroy(transform.GetChild(i).gameObject);
+        }
+        level.Load();
+        BuildMap();
+    }
+
     public void Start()
     {
         BuildMap();
@@ -53,6 +66,7 @@ public class MapLoader : MonoBehaviour
                 //}
             }
         }
+        onMapLoaded.Invoke();
     }
 
     private void AddAsset(MapElementStruct elementData, Vector3 position)

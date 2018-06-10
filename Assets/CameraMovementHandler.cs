@@ -14,7 +14,7 @@ public class CameraMovementHandler : MonoBehaviour
     {
         originalPos = transform.position;
         targetPos = originalPos;
-      //  targetPos.x = playerRef.value.position.x;
+        //  targetPos.x = playerRef.value.position.x;
     }
 
     // Update is called once per frame
@@ -26,5 +26,12 @@ public class CameraMovementHandler : MonoBehaviour
 
         }
         transform.position = Vector3.Lerp(transform.position, targetPos, .5f);
+    }
+
+    public void ReturnToOriginal()
+    {
+
+        targetPos = originalPos;
+        transform.position = originalPos;
     }
 }

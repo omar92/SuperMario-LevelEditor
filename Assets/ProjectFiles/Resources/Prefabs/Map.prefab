@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114490460851191644}
   - component: {fileID: 114683376122579068}
   - component: {fileID: 114539398201319792}
+  - component: {fileID: 114034385090180268}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -42,6 +43,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114034385090180268
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1280546733908912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c213b2f211c5ab9418cf3d1bcc2b1928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5e29f7a4251d1654aafd8e64c2bf2fcc, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114490460851191644}
+        m_MethodName: RebuildLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114490460851191644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,6 +84,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: {fileID: 11400000, guid: 68b304634fa64c743953cdd9d8502811, type: 2}
   bg: {fileID: 1905299745522058, guid: 7bccba954c88f5b4b8823bbe31643d3a, type: 2}
+  isEditMode: {fileID: 11400000, guid: 8396b1ed27ab00e40b856d505dcbe44c, type: 2}
+  onMapLoaded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 780e262d4a5a16649a6b828e83a499a8, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114539398201319792
 MonoBehaviour:
   m_ObjectHideFlags: 1

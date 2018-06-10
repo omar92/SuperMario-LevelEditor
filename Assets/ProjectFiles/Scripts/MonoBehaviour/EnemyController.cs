@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     public float xForce = 20;
     public float rayCheckDistance;
     public GameEvent OnEnemyKilled;
+  //  public GameEvent killPLayer;
 
     Vector2 direction;
     private Rigidbody rb;
@@ -38,15 +39,15 @@ public class EnemyController : MonoBehaviour
     {
         //check direction change
         ray = new Ray(transform.position, direction);
-        isHit = Physics.Raycast(ray, rayCheckDistance);
-        if (isHit)
+        RaycastHit info;
+        isHit = Physics.Raycast(ray, out info, rayCheckDistance);
+        if (isHit && info.collider.tag != "Player")
         {
             direction.x *= -1;
         }
 
         //chek player killed me 
         ray = new Ray(transform.position, Vector3.up);
-        RaycastHit info;
         isHit = Physics.Raycast(ray, out info, rayCheckDistance+.2f);
        // if(isHit) Debug.Log(info.collider.tag);
         if (isHit && info.collider.tag== "Player")
@@ -55,5 +56,13 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        killPLayer.Raise();
+    //    }
+    //}
 
 }
